@@ -22,11 +22,11 @@ export const knexPlayground = async () => {
       console.log('1. - cte function eval started')
       withBuilder.select('*').from('users')
       // uncomment to make joins work
-      addJoin(withBuilder)
+      // addJoin(withBuilder)
 
       withBuilder.where(whereBuilder => {
         // will eval joins too late (comment to make joins work)
-        // addJoin(withBuilder)
+        addJoin(withBuilder)
         whereBuilder.where('id', 1)
       })
 
